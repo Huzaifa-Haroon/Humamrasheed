@@ -280,6 +280,7 @@ h2:hover~.custom-cursor {
 
 .intro-div-text span {
     background-color: rebeccapurple;
+    padding: .3rem .5rem;
 }
 
 .intro-div-image {
@@ -324,7 +325,7 @@ h2:hover~.custom-cursor {
     content: '';
     position: absolute;
     inset: 6px;
-    background-image: url('https://m.media-amazon.com/images/M/MV5BMWM3MDMzNjMtODM5Ny00YmY0LWJhNzQtNTE1ZDNlNjllNDQ0XkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_.jpg');
+    background-image: url('.Images/humam-picture-1.jpg');
     background-position: center;
     background-size: cover;
     border-radius: 50%;
@@ -343,7 +344,7 @@ h2:hover~.custom-cursor {
     z-index: 4;
     padding: 1rem 1rem .5rem 1rem;
     transition: 2s;
-    transform: translateX(-50vw);
+    transform: translateX(-100vw);
     border-radius: 4px;
 }
 
