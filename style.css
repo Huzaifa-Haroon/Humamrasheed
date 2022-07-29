@@ -324,7 +324,7 @@ h2:hover~.custom-cursor {
     content: '';
     position: absolute;
     inset: 6px;
-    background-image: url('./Images/humam-picture-1.jpg');
+    background-image: url('https://m.media-amazon.com/images/M/MV5BMWM3MDMzNjMtODM5Ny00YmY0LWJhNzQtNTE1ZDNlNjllNDQ0XkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_.jpg');
     background-position: center;
     background-size: cover;
     border-radius: 50%;
