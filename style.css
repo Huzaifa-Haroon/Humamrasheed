@@ -587,7 +587,7 @@ h2:hover~.custom-cursor {
 }
 
 /* THIRD SECTION */
-.section-three {
+.section-3 {
     padding: 3rem 0rem 3rem 0rem;
     display: flex;
     justify-content: center;
@@ -693,6 +693,10 @@ h2:hover~.custom-cursor {
     .testimonial-card {
         width: 100%;
     }
+
+    .section-3 {
+        padding: 3rem 0rem 3rem 0rem;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -704,7 +708,7 @@ h2:hover~.custom-cursor {
 }
 
 /* FOURTH SECTION */
-.section-four {
+.section-4 {
     padding: 3rem 0rem 5rem 0rem;
     display: flex;
     justify-content: flex-start;
