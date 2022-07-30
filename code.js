@@ -1,20 +1,9 @@
-// Reveal Animations of first section and header
-
-window.onload = function () {
-  document.querySelector('.intro-div-text').style.transform = 'translateY(0)';
-  document.querySelector('.intro-div-image').style.transform = 'translateY(0)';
-  document.querySelector('.navbar-logo').style.transform = 'translateX(0)';
-  document.querySelector('.fa-bars-header').style.transform = 'translateX(0)';
-  document.querySelector('.navbar-links').style.transform = 'translateX(0)';
-  document.querySelector('.social-media-icons').style.transform = 'translateX(0)';
-};
-
 // REVEAL ELEMENT ON SCROLL
 
 window.addEventListener('scroll', function () {
   let windowHeight = window.innerHeight;
   let revealPoint = 150;
-  // Transform Animation
+  // Transform X Animation
   let TransformXElements = document.querySelectorAll('.transform-x-elements');
   for (let a = 0; a < TransformXElements.length; a++) {
     if (TransformXElements[a].getBoundingClientRect().top < windowHeight - revealPoint) {
@@ -26,6 +15,13 @@ window.addEventListener('scroll', function () {
   for (let b = 0; b < OpacityElements.length; b++) {
     if (OpacityElements[b].getBoundingClientRect().top < windowHeight - revealPoint) {
       OpacityElements[b].classList.add('add-remove-opacity');
+    }
+  }
+  // Transform Y Animation
+  let TransformYElements = document.querySelectorAll('.transform-y-elements');
+  for (let c = 0; c < TransformYElements.length; c++) {
+    if (TransformYElements[c].getBoundingClientRect().top < windowHeight - revealPoint) {
+      TransformYElements[c].classList.add('add-remove-transform-y');
     }
   }
   // 
@@ -255,5 +251,4 @@ prevBtn.addEventListener("click", function () {
     currentItem = reviews.length - 1;
   }
   showPerson(currentItem);
-
 });
