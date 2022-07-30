@@ -113,7 +113,6 @@ h2:hover~.custom-cursor {
     animation: showLogo 2s 1 linear forwards alternate;
 }
 
-/* THIS ANIMATION IS USED FOR LOGO AND SOCIAL MEDIA ICONS */
 @keyframes showLogo {
     0% {
         transform: translateX(-100vw);
@@ -299,7 +298,7 @@ h2:hover~.custom-cursor {
     font-weight: 400;
     text-align: center;
     margin: 3rem .5rem 1rem .5rem;
-    animation: showIntroText 2s 1s 1 linear forwards alternate;
+    animation: showIntroText 3s 1s 1 linear forwards alternate;
     transform: translateY(-100vh);
 }
 
@@ -323,7 +322,7 @@ h2:hover~.custom-cursor {
     border-radius: 50%;
     overflow: hidden;
     z-index: 5;
-    animation: showIntroImage 2s 1s linear forwards alternate;
+    animation: showIntroImage 3s 1s 1 linear forwards alternate;
     transform: translateY(100vh);
 }
 
@@ -378,9 +377,17 @@ h2:hover~.custom-cursor {
     left: 0;
     z-index: 4;
     padding: 1rem 1rem .5rem 1rem;
-    animation: showLogo 2s 1 linear forwards alternate;
+    animation: showSocialIcons 2s .5s 1 linear forwards alternate;
     border-radius: 4px;
+    transform: translateX(-100vw);
 }
+
+@keyframes showSocialIcons {
+    100% {
+        transform: translateX(0);
+    }
+}
+
 
 .social-media-icons ul {
     display: flex;
