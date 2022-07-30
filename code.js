@@ -1,3 +1,12 @@
+// 
+setTimeout(function () {
+  document.querySelector('.navbar-logo').style.transform = 'translateX(0)';
+  document.querySelector('.navbar-links').style.transform = 'translateX(0)';
+  document.querySelector('.social-media-icons').style.transform = 'translateX(0)';
+  document.querySelector('.intro-div-image').style.transform = 'translateY(0)';
+  document.querySelector('.intro-div-text').style.transform = 'translateY(0)';
+}, 1000)
+
 // REVEAL ELEMENT ON SCROLL
 
 window.addEventListener('scroll', function () {
@@ -15,13 +24,6 @@ window.addEventListener('scroll', function () {
   for (let b = 0; b < OpacityElements.length; b++) {
     if (OpacityElements[b].getBoundingClientRect().top < windowHeight - revealPoint) {
       OpacityElements[b].classList.add('add-remove-opacity');
-    }
-  }
-  // Transform Y Animation
-  let TransformYElements = document.querySelectorAll('.transform-y-elements');
-  for (let c = 0; c < TransformYElements.length; c++) {
-    if (TransformYElements[c].getBoundingClientRect().top < windowHeight - revealPoint) {
-      TransformYElements[c].classList.add('add-remove-transform-y');
     }
   }
   // 
