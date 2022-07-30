@@ -28,12 +28,24 @@
 /* PRELOADER */
 .preloader {
     background: rebeccapurple url('Images/preloader.gif') no-repeat center center;
-    background-size: 15%;
+    background-size: 20%;
     height: 100vh;
     width: 100vw;
     position: fixed;
     display: block;
     z-index: 1300;
+}
+
+@media screen and (max-width: 800px) {
+    .preloader {
+        background-size: 30%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .preloader {
+        background-size: 40%;
+    }
 }
 
 /* CUSTOM CURSOR */
@@ -61,10 +73,6 @@ h2:hover~.custom-cursor {
 /* CLASSES TO ANIMATE ELEMENTS ON PAGE LOAD */
 .add-remove-transform-x {
     transform: translateX(0) !important;
-}
-
-.add-remove-transform-y {
-    transform: translateY(0) !important;
 }
 
 .opacity-elements {
@@ -117,32 +125,13 @@ h2:hover~.custom-cursor {
 .navbar-logo {
     color: white;
     font-size: 1rem;
-    animation: showLogo 2s 1 linear forwards alternate;
-}
-
-@keyframes showLogo {
-    0% {
-        transform: translateX(-100vw);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
+    transition: 2s;
+    transform: translateX(-100vw);
 }
 
 .navbar-links {
-    animation: showLinks 2s 1 linear forwards alternate;
-}
-
-/* THIS ANIMATION IS USED FOR LINKS AND BARS ICON IN HEADER */
-@keyframes showLinks {
-    0% {
-        transform: translateX(100vw);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
+    transition: 2s;
+    transform: translateX(100vw);
 }
 
 .fa-bars-header {
@@ -305,7 +294,7 @@ h2:hover~.custom-cursor {
     font-weight: 400;
     text-align: center;
     margin: 3rem .5rem 1rem .5rem;
-    animation: showIntroText 3s 1 linear forwards alternate;
+    transition: 2s;
     transform: translateY(-100vh);
 }
 
@@ -314,11 +303,6 @@ h2:hover~.custom-cursor {
     padding: .3rem .5rem;
 }
 
-@keyframes showIntroText {
-    100% {
-        transform: translateY(0);
-    }
-}
 
 .intro-div-image {
     margin: 1.4rem 0rem;
@@ -329,7 +313,6 @@ h2:hover~.custom-cursor {
     border-radius: 50%;
     overflow: hidden;
     z-index: 5;
-    /* animation: showIntroImage 3s 1 linear forwards alternate; */
     transform: translateY(100vh);
     transition: 2s;
 }
@@ -347,12 +330,6 @@ h2:hover~.custom-cursor {
     height: 100%;
     object-fit: cover;
 }
-
-/* @keyframes showIntroImage {
-    100% {
-        transform: translateY(0);
-    }
-} */
 
 .intro-div-image::before {
     content: '';
@@ -396,17 +373,10 @@ h2:hover~.custom-cursor {
     left: 0;
     z-index: 4;
     padding: 1rem 1rem .5rem 1rem;
-    animation: showSocialIcons 2s 1 linear forwards alternate;
     border-radius: 4px;
     transform: translateX(-100vw);
+    transition: 2s;
 }
-
-@keyframes showSocialIcons {
-    100% {
-        transform: translateX(0);
-    }
-}
-
 
 .social-media-icons ul {
     display: flex;
