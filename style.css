@@ -144,7 +144,7 @@ h2:hover~.custom-cursor {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    animation: showLinksANDBaricon 2s 1 linear forwards alternate;
+    animation: showLinks 2s 1 linear forwards alternate;
     color: white;
     font-size: 30px;
 }
@@ -300,6 +300,7 @@ h2:hover~.custom-cursor {
     text-align: center;
     margin: 3rem .5rem 1rem .5rem;
     animation: showIntroText 2s 1s 1 linear forwards alternate;
+    transform: translateY(-100vh);
 }
 
 .intro-div-text span {
@@ -308,10 +309,6 @@ h2:hover~.custom-cursor {
 }
 
 @keyframes showIntroText {
-    0% {
-        transform: translateY(-100vh);
-    }
-
     100% {
         transform: translateY(0);
     }
@@ -327,13 +324,10 @@ h2:hover~.custom-cursor {
     overflow: hidden;
     z-index: 5;
     animation: showIntroImage 2s 1s linear forwards alternate;
+    transform: translateY(100vh);
 }
 
 @keyframes showIntroImage {
-    0% {
-        transform: translateY(100vh);
-    }
-
     100% {
         transform: translateY(0);
     }
