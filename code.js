@@ -17,13 +17,6 @@ window.addEventListener('scroll', function () {
       OpacityElements[b].classList.add('add-remove-opacity');
     }
   }
-  // Transform Y Animation
-  let TransformYElements = document.querySelectorAll('.transform-y-elements');
-  for (let c = 0; c < TransformYElements.length; c++) {
-    if (TransformYElements[c].getBoundingClientRect().top < windowHeight - revealPoint) {
-      TransformYElements[c].classList.add('add-remove-transform-y');
-    }
-  }
   // 
 
   let navbar = $('.navbar'),
