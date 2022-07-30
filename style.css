@@ -52,6 +52,10 @@ h2:hover~.custom-cursor {
     transform: translateX(0) !important;
 }
 
+.add-remove-transform-y {
+    transform: translateY(0) !important;
+}
+
 .opacity-elements {
     opacity: 0;
     transition: 2s;
@@ -59,6 +63,10 @@ h2:hover~.custom-cursor {
 
 .add-remove-opacity {
     opacity: 1.0;
+}
+
+.transform-down {
+    transform: translateY(100vh);
 }
 
 /*  */
@@ -80,7 +88,6 @@ h2:hover~.custom-cursor {
     background-color: rebeccapurple;
     overflow: hidden;
     z-index: 22;
-
 }
 
 .fixed {
@@ -103,13 +110,33 @@ h2:hover~.custom-cursor {
 .navbar-logo {
     color: white;
     font-size: 1rem;
-    transform: translateX(-100vw);
-    transition: 2s;
+    animation: showLogo 2s 1 linear forwards alternate;
+}
+
+/* THIS ANIMATION IS USED FOR LOGO AND SOCIAL MEDIA ICONS */
+@keyframes showLogo {
+    0% {
+        transform: translateX(-100vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .navbar-links {
-    transform: translateX(100vw);
-    transition: 2s;
+    animation: showLinks 2s 1 linear forwards alternate;
+}
+
+/* THIS ANIMATION IS USED FOR LINKS AND BARS ICON IN HEADER */
+@keyframes showLinks {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .fa-bars-header {
@@ -117,8 +144,7 @@ h2:hover~.custom-cursor {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transform: translateX(100vw);
-    transition: 1s;
+    animation: showLinksANDBaricon 2s 1 linear forwards alternate;
     color: white;
     font-size: 30px;
 }
@@ -264,7 +290,6 @@ h2:hover~.custom-cursor {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    background-color: black;
     overflow: hidden;
 }
 
@@ -274,13 +299,22 @@ h2:hover~.custom-cursor {
     font-weight: 400;
     text-align: center;
     margin: 3rem .5rem 1rem .5rem;
-    transform: translateY(-100vh);
-    transition: 4s;
+    animation: showIntroText 2s 1s 1 linear forwards alternate;
 }
 
 .intro-div-text span {
     background-color: rebeccapurple;
     padding: .3rem .5rem;
+}
+
+@keyframes showIntroText {
+    0% {
+        transform: translateY(-100vh);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .intro-div-image {
@@ -291,11 +325,18 @@ h2:hover~.custom-cursor {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     overflow: hidden;
-    transform: translateY(100vh);
-    transition: 2s;
-    transition-delay: 2s;
     z-index: 5;
+    animation: showIntroImage 2s 1s linear forwards alternate;
+}
 
+@keyframes showIntroImage {
+    0% {
+        transform: translateY(100vh);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .intro-div-image::before {
@@ -343,8 +384,7 @@ h2:hover~.custom-cursor {
     left: 0;
     z-index: 4;
     padding: 1rem 1rem .5rem 1rem;
-    transition: 2s;
-    transform: translateX(-100vw);
+    animation: showLogo 2s 1 linear forwards alternate;
     border-radius: 4px;
 }
 
@@ -424,37 +464,16 @@ h2:hover~.custom-cursor {
 
 .second-section-videos {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 0rem 1rem;
     width: 100%;
-}
-
-.second-section-videos p {
-    color: white;
-    width: 50%;
-    position: relative;
-    padding: 0rem 0rem .5rem 0rem;
-    transition: 2s;
-    transition-delay: .3s;
-    font-size: 1.1rem;
-    z-index: 9;
-}
-
-.second-section-videos p::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    width: 100%;
-    height: .1rem;
+    justify-content: center;
 }
 
 .second-section-videos video {
-    width: 40%;
-    background-color: black;
+    width: 50%;
     z-index: 10;
+    transition: 2s;
 }
 
 .transform-right {
@@ -465,88 +484,22 @@ h2:hover~.custom-cursor {
     transform: translateX(-100vw);
 }
 
-/* doing this for responsiveness */
-.first-video p {
-    order: 1;
-}
-
-.first-video video {
-    order: 2;
-}
-
-.second-video p {
-    order: 2;
-}
-
-.second-video video {
-    order: 1;
-}
-
-.third-video p {
-    order: 1;
-}
-
-.third-video video {
-    order: 2;
-}
-
-.fourth-video p {
-    order: 2;
-}
-
-.fourth-video video {
-    order: 1;
-}
-
-
 /* SECOND SECTION RESPONSIVENESS */
-@media screen and (max-width: 900px) {
-    .second-section-videos {
-        flex-direction: column;
-        justify-content: center;
+@media screen and (max-width: 1000px) {
+    .second-section-videos video {
+        width: 60%;
     }
+}
 
+@media screen and (max-width: 900px) {
     .second-section-videos video {
         width: 70%;
     }
+}
 
-    .second-section-videos p {
-        width: 70%;
-        text-align: center;
-        font-size: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .first-video p {
-        order: 2;
-    }
-
-    .first-video video {
-        order: 1;
-    }
-
-    .second-video p {
-        order: 2;
-    }
-
-    .second-video video {
-        order: 1;
-    }
-
-    .third-video p {
-        order: 2;
-    }
-
-    .third-video video {
-        order: 1;
-    }
-
-    .fourth-video p {
-        order: 2;
-    }
-
-    .fourth-video video {
-        order: 1;
+@media screen and (max-width: 800px) {
+    .second-section-videos video {
+        width: 75%;
     }
 }
 
@@ -554,11 +507,11 @@ h2:hover~.custom-cursor {
     .second-section-videos video {
         width: 80%;
     }
+}
 
-    .second-section-videos p {
-        width: 80%;
-        text-align: center;
-        font-size: 1rem;
+@media screen and (max-width: 600px) {
+    .second-section-videos video {
+        width: 85%;
     }
 }
 
@@ -566,23 +519,11 @@ h2:hover~.custom-cursor {
     .second-section-videos video {
         width: 90%;
     }
-
-    .second-section-videos p {
-        width: 90%;
-        text-align: center;
-        font-size: 1rem;
-    }
 }
 
 @media screen and (max-width: 400px) {
     .second-section-videos video {
         width: 100%;
-    }
-
-    .second-section-videos p {
-        width: 100%;
-        text-align: center;
-
     }
 }
 
