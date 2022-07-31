@@ -2,15 +2,17 @@
 window.onload = function () {
   let preloader = document.querySelector('.preloader');
   preloader.style.display = 'none';
-  setTimeout(showElements, 100)
+  setTimeout(showElements, 200)
 }
 
 function showElements() {
   document.querySelector('.navbar-logo').style.transform = 'translateX(0)';
   document.querySelector('.navbar-links').style.transform = 'translateX(0)';
   document.querySelector('.social-media-icons').style.transform = 'translateX(0)';
+  document.querySelector('.fa-bars-header').style.transform = 'translateX(0)';
   document.querySelector('.intro-div-image').style.transform = 'translateY(0)';
   document.querySelector('.intro-div-text').style.transform = 'translateY(0)';
+  
 }
 
 // REVEAL ELEMENT ON SCROLL
