@@ -180,7 +180,6 @@ h2:hover~.custom-cursor {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    animation: showLinks 2s 1 linear forwards alternate;
     color: white;
     font-size: 30px;
 }
