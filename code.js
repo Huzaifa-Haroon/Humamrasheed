@@ -12,7 +12,7 @@ function showElements() {
   document.querySelector('.fa-bars-header').style.transform = 'translateX(0)';
   document.querySelector('.intro-div-image').style.transform = 'translateY(0)';
   document.querySelector('.intro-div-text').style.transform = 'translateY(0)';
-  
+
 }
 
 // REVEAL ELEMENT ON SCROLL
@@ -177,87 +177,31 @@ document.querySelector(".copyright-year").innerHTML = year;
 
 // TESTIMONIALS
 
-// local reviews data
-const reviews = [
-  {
-    id: 1,
-    name: "Ana De Armas",
-    job: "Graphic Designer",
-    img:
-      "https://media1.popsugar-assets.com/files/thumbor/firPcY1Js9KD9Q61UZedbpwIxe0/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2022/04/01/894/n/1922153/tmp_GD89YR_5189df5a5434a91a_GettyImages-1343719310.jpg",
-    text:
-      "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
-  },
-  {
-    id: 2,
-    name: "Monica Bellucci",
-    job: "Photographer",
-    img:
-      "https://i.pinimg.com/originals/04/62/ed/0462edc8c9a74cd05b4f9a6fa5c79ac9.jpg",
-    text:
-      "Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.",
-  },
-  {
-    id: 3,
-    name: "Al Pacino",
-    job: "Illustrator",
-    img:
-      "https://vintagenewsdaily.com/wp-content/uploads/2018/02/3.bp_.blogspot.comyoung-al-pacino-1-9c1b51bf3c838ba4c566872d6f191cdc60a93563.jpg",
-    text:
-      "Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.lorem ispum ispum lorem alien.",
-  },
-  {
-    id: 4,
-    name: "Robert Pattinson",
-    job: "Enterpreneur",
-    img:
-      "https://media1.popsugar-assets.com/files/thumbor/iLNUcDNN3wIBCFX6bEfgKldd-6Q/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2017/08/10/724/n/1922398/d747c388598c8868682ec3.33000292_edit_img_image_43862198_1502380970/i/Hot-Robert-Pattinson-Pictures-2017.jpg",
-    text:
-      "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
-  },
-];
-// select items
-const img = document.querySelector(".person-img");
-const author = document.querySelector(".author");
-const job = document.querySelector(".job");
-const info = document.querySelector(".info");
-
-const prevBtn = document.querySelector(".prev-btn");
-const nextBtn = document.querySelector(".next-btn");
-
-// set starting item
-let currentItem = 0;
-
-// load initial item
-window.addEventListener("DOMContentLoaded", function () {
-  const item = reviews[currentItem];
-  img.src = item.img;
-  author.textContent = item.name;
-  job.textContent = item.job;
-  info.textContent = item.text;
+const slides = document.querySelectorAll(".slide-item");
+const nextBtn = document.querySelector(".arrow-next");
+const prevBtn = document.querySelector(".arrow-prev");
+slides.forEach(function (slide, index) {
+  slide.style.left = `${index * 120}vw`;
 });
-
-// show person based on item
-function showPerson(person) {
-  const item = reviews[person];
-  img.src = item.img;
-  author.textContent = item.name;
-  job.textContent = item.job;
-  info.textContent = item.text;
-}
-// show next person
+let counter = 0;
 nextBtn.addEventListener("click", function () {
-  currentItem++;
-  if (currentItem > reviews.length - 1) {
-    currentItem = 0;
-  }
-  showPerson(currentItem);
+  counter++;
+  carousel();
 });
-// show prev person
+
 prevBtn.addEventListener("click", function () {
-  currentItem--;
-  if (currentItem < 0) {
-    currentItem = reviews.length - 1;
-  }
-  showPerson(currentItem);
+  counter--;
+  carousel();
 });
+
+function carousel() {
+  if (counter === slides.length) {
+    counter = 0;
+  }
+  if (counter < 0) {
+    counter = slides.length - 1;
+  }
+  slides.forEach(function (slide) {
+    slide.style.transform = `translateX(-${counter * 120}vw)`;
+  });
+}
