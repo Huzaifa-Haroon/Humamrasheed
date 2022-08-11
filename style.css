@@ -35,7 +35,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 1300;
+    z-index: 1400;
 }
 
 .preloader p {
@@ -168,6 +168,7 @@ h2:hover~.custom-cursor {
     font-size: 1rem;
     transition: 2s;
     transform: translateX(-100vw);
+    padding-right: .5rem;
 }
 
 .navbar-links {
