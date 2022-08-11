@@ -591,7 +591,7 @@ h2:hover~.custom-cursor {
 
 .slider-container {
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     position: relative;
     overflow-x: hidden;
 }
@@ -720,6 +720,7 @@ h2:hover~.custom-cursor {
 
     .slider-container {
         width: 100%;
+        height: 80vh;
     }
 
     .slide-item {
@@ -741,27 +742,21 @@ h2:hover~.custom-cursor {
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 500px) {
     .slider-container {
         height: 85vh;
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 380px) {
+    .slider-container {
+        height: 90vh;
+    }
+}
+
+@media screen and (max-width: 340px) {
     .slider-container {
         height: 95vh;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .slider-container {
-        height: 100vh;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    .slider-container {
-        height: 105vh;
     }
 }
 
